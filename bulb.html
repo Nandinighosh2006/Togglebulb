@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Bulb Toggle</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: black; 
+      transition: background-color 0.5s;
+    }
+
+    img {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    img:active {
+      transform: scale(0.95);
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 20px;
+      transition: color 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Click the Bulb</h1>
+  <img id="bulb" src="bulb image.svg" Light Bulb>
+
+  <script>
+    const bulb = document.getElementById("bulb");
+    const heading = document.querySelector("h1");
+    let light= false;
+
+    bulb.addEventListener("click", () => {
+      if (light) {
+        bulb.src ="bulb image.svg" ;     
+        document.body.style.backgroundColor = "black";
+        heading.style.color = "white";
+      } else {
+        bulb.src = "bulb image.svg";      
+        document.body.style.backgroundColor = "#fef4b2";
+        heading.style.color = "black";
+      }
+      light = !light; 
+    });
+  </script>
+</body>
+</html>
